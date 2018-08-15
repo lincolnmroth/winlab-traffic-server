@@ -75,60 +75,60 @@ def setDirX():
     dir = 'Forward'
     return "Changing to X"
 
-@app.route('/yellowXOn', methods['POST'])
+@app.route('/yellowXOn', methods=['POST'])
 def yellowXOn():
     GPIO.output(9, True)
     return 'done'
 
-@app.route('/yellowXOff', methods['POST'])
+@app.route('/yellowXOff', methods=['POST'])
 def yellowXOff():
     GPIO.output(9, False)
     return 'done'
 
-@app.route('/yellowYOn', methods['POST'])
+@app.route('/yellowYOn', methods=['POST'])
 def yellowYOn():
     GPIO.output(6, True)
     return 'done'
 
-@app.route('/yellowYOn', methods['POST'])
+@app.route('/yellowYOn', methods=['POST'])
 def yellowYOff():
     GPIO.output(6, False)
     return 'done'
 
-@app.route('/redXOn', methods['POST'])
+@app.route('/redXOn', methods=['POST'])
 def redXOn():
     GPIO.output(8, True)
     return 'done'
 
-@app.route('/redXOff', methods['POST'])
+@app.route('/redXOff', methods=['POST'])
 def redXOff():
     GPIO.output(8, False)
     return 'done'
 
-@app.route('/redYOn', methods['POST'])
+@app.route('/redYOn', methods=['POST'])
 def redYOn():
     GPIO.output(5, True)
     return 'done'
 
-@app.route('/redYOff', methods['POST'])
+@app.route('/redYOff', methods=['POST'])
 def redYOff():
     GPIO.output(5, False)
     return 'done'
 
-@app.route('/greenXOn', methods['POST'])
+@app.route('/greenXOn', methods=['POST'])
 def greenXOn():
     GPIO.output(4, True)
     return 'done'
 
-@app.route('/greenXOff', methods['POST'])
+@app.route('/greenXOff', methods=['POST'])
 def greenXOff():
     GPIO.output(4, False)
     return 'done'
-@app.route('/greenYOn', methods['POST'])
+@app.route('/greenYOn', methods=['POST'])
 def greenYOn():
     GPIO.output(7, True)
     return 'done'
-@app.route('/greenYOff', methods['POST'])
+@app.route('/greenYOff', methods=['POST'])
 def greenYOff():
     GPIO.output(7, False)
     return 'done'
