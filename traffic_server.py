@@ -90,7 +90,7 @@ def yellowYOn():
     GPIO.output(6, True)
     return 'done'
 
-@app.route('/yellowYOn', methods=['POST'])
+@app.route('/yellowYOff', methods=['POST'])
 def yellowYOff():
     GPIO.output(6, False)
     return 'done'
