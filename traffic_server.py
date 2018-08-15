@@ -13,44 +13,10 @@ RED_LIGHT_DELAY = 1
 dir = 'Forward'
 state = 'on'
 
-##@app.route('/newexperiment', methods = ['GET', 'POST'])
-##def turn():
-##    try:
-##        for i in range (10000):
-##            time.sleep(5)
-##            thing()
-##    except KeyboardInterrupt:
-##        return redirect('/experimentone')
-##
-##
 
 @app.route('/', methods = ['GET', 'POST'])
 def test():
     return 'hello'
-##
-##@app.route('/experiment', methods = ['GET', 'POST'])
-##def experiment():
-##    getDir()
-##    thing()
-##    thing()
-##    return 'Really'
-##@app.route('/experimentone', methods = ['GET', 'POST'])
-##def experimentone():
-##    try:
-##        for i in range (10000):
-##            time.sleep(5)
-##            thing()
-##    except KeyboardInterrupt:
-##        return redirect('/changing')
-##
-##@app.route('/changing')
-##def experimenttwo():
-##    global YELLOW_LIGHT_DELAY
-##    global RED_LIGHT_DELAY
-##    YELLOW_LIGHT_DELAY = random.randint(2,4)*1
-##    RED_LIGHT_DELAY = random.randint(2,4)*1
-##    return redirect('/newexperiment')
-##
 
 @app.route('/changeDir', methods=['POST'])
 def thing():
@@ -74,11 +40,11 @@ def thing():
         GPIO.output(5, False) #Green off on 1st side
         GPIO.output(6, True)  #Yellow on on 1st side
         time.sleep(YELLOW_LIGHT_DELAY)
-   
+
         GPIO.output(6, False)         #Yellow off on 1st side
         GPIO.output(7, True)           #Red on on 1st side
         time.sleep(RED_LIGHT_DELAY)
-   
+
         GPIO.output(4, False)         # Red off on 2nd side
         GPIO.output(8, True)          #Green on 2nd side
         dir = 'Forward'
@@ -96,25 +62,81 @@ def setDirY():
     GPIO.output(7, False)         # Red off on 2nd side
     GPIO.output(5, True)          #Green on 2nd side
     dir = 'Backward'
-    return "Changing to Y"          
-        
+    return "Changing to Y"
+
 @app.route('/setDirX', methods=['POST'])
 def setDirX():
     GPIO.output(5, False) #Green off on 1st side
     GPIO.output(7, True)           #Red on on 1st side
     time.sleep(RED_LIGHT_DELAY)
-   
+
     GPIO.output(4, False)         # Red off on 2nd side
     GPIO.output(8, True)          #Green on 2nd side
     dir = 'Forward'
     return "Changing to X"
-    
 
+@app.route('/yellowXOn', methods['POST'])
+def yellowXOn():
+    GPIO.output(9, True)
+    return 'done'
+
+@app.route('/yellowXOff', methods['POST'])
+def yellowXOn():
+    GPIO.output(9, False)
+    return 'done'
+
+@app.route('/yellowYOn', methods['POST'])
+def yellowXOn():
+    GPIO.output(6, True)
+    return 'done'
+
+@app.route('/yellowYOn', methods['POST'])
+def yellowXOn():
+    GPIO.output(6, False)
+    return 'done'
+
+@app.route('/redXOn', methods['POST'])
+def yellowXOn():
+    GPIO.output(8, True)
+    return 'done'
+
+@app.route('/redXOff', methods['POST'])
+def yellowXOn():
+    GPIO.output(8, False)
+    return 'done'
+
+@app.route('/redYOn', methods['POST'])
+def yellowXOn():
+    GPIO.output(5, True)
+    return 'done'
+
+@app.route('/redYOff', methods['POST'])
+def yellowXOn():
+    GPIO.output(5, False)
+    return 'done'
+
+@app.route('/greenXOn', methods['POST'])
+def yellowXOn():
+    GPIO.output(4, True)
+    return 'done'
+
+@app.route('/greenXOff', methods['POST'])
+def yellowXOn():
+    GPIO.output(4, False)
+    return 'done'
+@app.route('/greenYOn', methods['POST'])
+def yellowXOn():
+    GPIO.output(7, True)
+    return 'done'
+@app.route('/greenYOff', methods['POST'])
+def yellowXOn():
+    GPIO.output(7, False)
+    return 'done'
 
 @app.route('/getDir', methods=['POST'])
 def getDir():
     return dir
-  
+
 def setup():
     GPIO.setmode(GPIO.BCM)
     for i in PINS:
@@ -127,6 +149,3 @@ try:
 except KeyboardInterrupt:
     GPIO.cleanup()
     print('cleanup')
-    
-
-
