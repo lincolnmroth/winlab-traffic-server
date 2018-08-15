@@ -81,55 +81,55 @@ def yellowXOn():
     return 'done'
 
 @app.route('/yellowXOff', methods['POST'])
-def yellowXOn():
+def yellowXOff():
     GPIO.output(9, False)
     return 'done'
 
 @app.route('/yellowYOn', methods['POST'])
-def yellowXOn():
+def yellowYOn():
     GPIO.output(6, True)
     return 'done'
 
 @app.route('/yellowYOn', methods['POST'])
-def yellowXOn():
+def yellowYOff():
     GPIO.output(6, False)
     return 'done'
 
 @app.route('/redXOn', methods['POST'])
-def yellowXOn():
+def redXOn():
     GPIO.output(8, True)
     return 'done'
 
 @app.route('/redXOff', methods['POST'])
-def yellowXOn():
+def redXOff():
     GPIO.output(8, False)
     return 'done'
 
 @app.route('/redYOn', methods['POST'])
-def yellowXOn():
+def redYOn():
     GPIO.output(5, True)
     return 'done'
 
 @app.route('/redYOff', methods['POST'])
-def yellowXOn():
+def redYOff():
     GPIO.output(5, False)
     return 'done'
 
 @app.route('/greenXOn', methods['POST'])
-def yellowXOn():
+def greenXOn():
     GPIO.output(4, True)
     return 'done'
 
 @app.route('/greenXOff', methods['POST'])
-def yellowXOn():
+def greenXOff():
     GPIO.output(4, False)
     return 'done'
 @app.route('/greenYOn', methods['POST'])
-def yellowXOn():
+def greenYOn():
     GPIO.output(7, True)
     return 'done'
 @app.route('/greenYOff', methods['POST'])
-def yellowXOn():
+def greenYOff():
     GPIO.output(7, False)
     return 'done'
 
